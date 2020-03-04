@@ -22,6 +22,13 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
+			fetch("https://assets.breatheco.de/apis/fake/contact/agenda/ipince")
+				.then(response => response.json())
+				.then(data => {
+					let { store, actions } = state;
+					setState({ store: { ...state.store, contacts: data }, actions });
+				});
+
 			/**
 			 * EDIT THIS!
 			 * This function is the equivalent to "window.onLoad", it only run once on the entire application lifetime
