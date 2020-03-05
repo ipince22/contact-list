@@ -16,6 +16,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 			//Your data structures, A.K.A Entities
 		},
 		actions: {
+			LoadContacts: () => {
+				fetch("https://assets.breatheco.de/apis/fake/contact/agenda/ipince")
+					.then(response => response.json())
+					.then(data => {
+						state.actions.saveContactsToStore(data);
+					});
+			},
 			saveContactsToStore: data => {
 				setStore({ contacts: data });
 			},
@@ -46,6 +53,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => {
 						console.log("output", data);
 						alert("New Contact Add, OK!");
+
 						// props.history.push("/Contacts")
 					})
 					.catch(error => console.error("Error:", error));

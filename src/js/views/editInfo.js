@@ -82,7 +82,12 @@ export const EditInfo = props => {
 							}}>
 							save
 						</button>
-						<Link className="mt-3 w-100 text-center" to="/Contacts">
+						<Link
+							className="mt-3 w-100 text-center"
+							to="/Contacts"
+							onClick={() => {
+								state.actions.LoadContacts();
+							}}>
 							or get back to contacts
 						</Link>
 					</form>

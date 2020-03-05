@@ -6,15 +6,16 @@ import MikePhoto from "../../img/m101.jpg";
 import { Context } from "../store/appContext";
 import Link from "react-router-dom";
 
-export const ContactCard = props => {
+//export const ContactCard = ({ item }) => {
+export const ContactCard = () => {    
 	//const { store, action } = useContext(Context);
 	//const [state, setState] = useState({
 		//initialize state here
-	});
+	
 
 	//console.log("contacts", store.contacts);
 	return (
-		<>
+		
 			<li className="list-group-item">
 				<div className="row w-100">
 					<div className="col-12 col-sm-6 col-md-3 px-0">
@@ -42,7 +43,7 @@ export const ContactCard = props => {
 											<label className="name lead">{item.full_name}</label>
 											<br />
 											<i className="fas fa-map-marker-alt text-muted mr-3" />
-											<span className="text-muted">{item.address}</span>
+											<span className="text-muted">{props.item.address}</span>
 											<br />
 											<span
 												className="fa fa-phone fa-fw text-muted mr-3"
@@ -65,7 +66,7 @@ export const ContactCard = props => {
 					</div>
 				</div>
 			</li>
-		</>
+		
 	);
 };
 
@@ -75,7 +76,8 @@ export const ContactCard = props => {
  **/
 ContactCard.propTypes = {
 	history: PropTypes.object,
-	onDelete: PropTypes.func
+    onDelete: PropTypes.func,
+    item: PropTypes.object
 };
 
 /**

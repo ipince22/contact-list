@@ -8,6 +8,9 @@ import { Context } from "../store/appContext";
 
 export const Contacts = () => {
 	const { store, actions } = useContext(Context);
+
+	//const { store:{contacts}, actions } = useContext(Context);
+
 	console.log("page contacts.js", store.contacts);
 	const [state, setState] = useState({
 		showModal: false
@@ -34,7 +37,10 @@ export const Contacts = () => {
 						<button className="btn">
 							<i className="fas fa-trash-alt" />
 						</button>
-					</div> */}
+                    </div> 
+                    <Card item={item} />
+                    */}
+
 					{!store.contacts
 						? "Loading.."
 						: store.contacts.map((item, index) => {
