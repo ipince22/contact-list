@@ -40,46 +40,39 @@ export const Contacts = () => {
 						: store.contacts.map((item, index) => {
 								return (
 									<>
-										<li className="list-group-item list-group-item-action">
-											<div key={index}>
-												<div className="row">
-													<div className="col">
-														<label className="name lead"> {item.full_name} </label>
-														<br />
-														<i className="fas fa-map-marker-alt text-muted mr-3" />
-														<span className="text-muted">{item.address}</span>
-														<br />
-														<span
-															className="fa fa-phone fa-fw text-muted mr-3"
-															data-toggle="tooltip"
-															title=""
-															data-original-title=""
-														/>
-														<span className="text-muted small">{item.phone}</span>
-														<br />
-														<span
-															className="fa fa-envelope fa-fw text-muted mr-3"
-															data-toggle="tooltip"
-															data-original-title=""
-															title=""
-														/>
-														<span className="text-muted small text-truncate">
-															{item.email}
-														</span>
-													</div>
-													<div className="col-2">
-														<Link to={"/EditInfo/" + index}>
-															<i
-																className="fas fa-user-edit"
-																style={{ cursor: "pointer" }}
-															/>
-														</Link>
-														<i
-															onClick={() => trash(item.id)}
-															style={{ cursor: "pointer" }}
-															className="fas fa-trash-alt ml-2"
-														/>
-													</div>
+										<li key={index} className="list-group-item list-group-item-action">
+											<div className="row">
+												<div className="col">
+													<label className="name lead"> {item.full_name} </label>
+													<br />
+													<i className="fas fa-map-marker-alt text-muted mr-3" />
+													<span className="text-muted">{item.address}</span>
+													<br />
+													<span
+														className="fa fa-phone fa-fw text-muted mr-3"
+														data-toggle="tooltip"
+														title=""
+														data-original-title=""
+													/>
+													<span className="text-muted small">{item.phone}</span>
+													<br />
+													<span
+														className="fa fa-envelope fa-fw text-muted mr-3"
+														data-toggle="tooltip"
+														data-original-title=""
+														title=""
+													/>
+													<span className="text-muted small text-truncate">{item.email}</span>
+												</div>
+												<div className="col-2">
+													<Link to={"/EditInfo/" + index}>
+														<i className="fas fa-user-edit" style={{ cursor: "pointer" }} />
+													</Link>
+													<i
+														onClick={() => trash(item.id)}
+														style={{ cursor: "pointer" }}
+														className="fas fa-trash-alt ml-2"
+													/>
 												</div>
 											</div>
 										</li>

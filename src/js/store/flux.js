@@ -16,6 +16,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 			//Your data structures, A.K.A Entities
 		},
 		actions: {
+			EditContact: (contactObj, IdContact) => {
+				fetch("https://assets.breatheco.de/apis/fake/contact/" + IdContact, {
+					method: "PUT",
+					body: JSON.stringify(contactObj),
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(response => response.json())
+					.then(data => {
+						alert("Success:", JSON.stringify(data));
+					})
+					.catch(error => console.log("Error:", error));
+			},
 			NewContact: Objcontact => {
 				console.log("input", Objcontact);
 				fetch("https://assets.breatheco.de/apis/fake/contact/", {
