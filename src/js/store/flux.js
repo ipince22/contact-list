@@ -16,6 +16,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			//Your data structures, A.K.A Entities
 		},
 		actions: {
+			saveContactsToStore: data => {
+				setStore({ contacts: data });
+			},
 			EditContact: (contactObj, IdContact) => {
 				fetch("https://assets.breatheco.de/apis/fake/contact/" + IdContact, {
 					method: "PUT",

@@ -25,8 +25,7 @@ const injectContext = PassedComponent => {
 			fetch("https://assets.breatheco.de/apis/fake/contact/agenda/ipince")
 				.then(response => response.json())
 				.then(data => {
-					let { store, actions } = state;
-					setState({ store: { ...state.store, contacts: data }, actions });
+					state.actions.saveContactsToStore(data);
 				});
 
 			/**

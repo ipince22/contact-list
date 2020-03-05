@@ -1,21 +1,21 @@
 import React, { useState, useEffect, useContext } from "react";
-//import { prependOnceListener } from "cluster";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
-import Context from "../store/appContext";
-import Link from "react-router";
-
 export const EditInfo = props => {
+	const { store, actions } = useContext(Context);
+
 	const [iname, setName] = useState(store.contacts[props.match.params.elid].full_name);
 	const [iemail, setEmail] = useState(store.contacts[props.match.params.elid].email);
 	const [iphone, setPhone] = useState(store.contacts[props.match.params.elid].phone);
 	const [iaddress, setAddress] = useState(store.contacts[props.match.params.elid].address);
 
-	const { store, actions } = useState(Context);
 	const [objContact, setObjContact] = useState();
 
 	useEffect(
 		() => {
+			console.log("page editinfo.js", store.contacts);
 			setObjContact({
 				agenda_slug: "ipince",
 				full_name: iname,

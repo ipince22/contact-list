@@ -7,12 +7,12 @@ import { Context } from "../store/appContext";
 import Link from "react-router-dom";
 
 export const ContactCard = props => {
-	const { store, action } = useContext(Context);
-	const [state, setState] = useState({
+	//const { store, action } = useContext(Context);
+	//const [state, setState] = useState({
 		//initialize state here
 	});
 
-	console.log("contacts", store.contacts);
+	//console.log("contacts", store.contacts);
 	return (
 		<>
 			<li className="list-group-item">
@@ -34,7 +34,7 @@ export const ContactCard = props => {
 								<i className="fas fa-trash-alt" />
 							</button>
 						</div>
-						{!store.contacts
+						{/* {!store.contacts
 							? "Loading.."
 							: store.contacts.map((item, index) => {
 									return (
@@ -61,7 +61,7 @@ export const ContactCard = props => {
 											<span className="text-muted small text-truncate">{item.email}</span>
 										</>
 									);
-							  })}
+							  })} */}
 					</div>
 				</div>
 			</li>
