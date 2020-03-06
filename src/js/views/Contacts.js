@@ -7,14 +7,21 @@ import { Modal } from "../component/Modal";
 import { Context } from "../store/appContext";
 
 export const Contacts = () => {
-	const { store, actions } = useContext(Context);
-
 	//const { store:{contacts}, actions } = useContext(Context);
+	const { store, actions } = useContext(Context);
+	const [IdContact, setIdContact] = useState();
 
 	console.log("page contacts.js", store.contacts);
 	const [state, setState] = useState({
 		showModal: false
 	});
+
+	const deleteContact = contactID => {
+		setIdContact(contactID);
+		setState({
+			showModal: true
+		});
+	};
 
 	return (
 		<div className="container">
@@ -74,7 +81,7 @@ export const Contacts = () => {
 													<i className="fas fa-user-edit" style={{ cursor: "pointer" }} />
 												</Link>
 												<i
-													onClick={() => trash(item.id)}
+													// onClick={() => deleteContact(item.id)}
 													style={{ cursor: "pointer" }}
 													className="fas fa-trash-alt ml-2"
 												/>
