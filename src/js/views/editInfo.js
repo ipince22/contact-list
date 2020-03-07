@@ -86,7 +86,7 @@ export const EditInfo = props => {
 							className="mt-3 w-100 text-center"
 							to="/Contacts"
 							onClick={() => {
-								state.actions.LoadContacts();
+								//state.actions.LoadContacts();
 							}}>
 							or get back to contacts
 						</Link>

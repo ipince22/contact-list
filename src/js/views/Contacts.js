@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 //import { ContactCard } from "../component/ContactCard.js";
 import { Modal } from "../component/Modal";
@@ -18,6 +19,7 @@ export const Contacts = () => {
 
 	const deleteContact = contactID => {
 		setIdContact(contactID);
+
 		setState({
 			showModal: true
 		});
@@ -81,7 +83,7 @@ export const Contacts = () => {
 													<i className="fas fa-user-edit" style={{ cursor: "pointer" }} />
 												</Link>
 												<i
-													// onClick={() => deleteContact(item.id)}
+													onClick={() => deleteContact(item.id)}
 													style={{ cursor: "pointer" }}
 													className="fas fa-trash-alt ml-2"
 												/>
@@ -94,7 +96,25 @@ export const Contacts = () => {
 				{/* </ul> */}
 				{/* </div> */}
 			</div>
-			<Modal show={state.showModal} onClose={() => setState({ showModal: false })} />
+			<Modal show={state.showModal} onClose={() => setState({ showModal: false })} idContact={IdContact} />
 		</div>
 	);
+};
+
+/**
+ * Define the data-types for
+ * your component's properties
+ **/
+Contacts.propTypes = {
+	history: PropTypes.object,
+	onDelete: PropTypes.func,
+	item: PropTypes.object
+};
+
+/**
+ * Define the default values for
+ * your component's properties
+ **/
+Contacts.defaultProps = {
+	onDelete: null
 };
