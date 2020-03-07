@@ -5,9 +5,8 @@ import { Context } from "../store/appContext";
 
 export const Modal = props => {
 	const { actions } = useContext(Context);
-	// const [state, setState] = useState(
+	const [state, setState] = useState();
 
-	// );
 	return (
 		<div className="modal" tabIndex="-1" role="dialog" style={{ display: props.show ? "inline-block" : "none" }}>
 			<div className="modal-dialog" role="document">
@@ -31,7 +30,7 @@ export const Modal = props => {
 						<p>Warning: unknown consequences after this point... Kidding!</p>
 					</div>
 					<div className="modal-footer">
-						<button type="button" className="btn btn-danger">
+						<button type="button" className="btn btn-danger" data-dismiss="modal">
 							Cancel
 						</button>
 						<button
@@ -40,6 +39,7 @@ export const Modal = props => {
 							data-dismiss="modal"
 							onClick={() => {
 								actions.deleteContact(props.idContact);
+								//useState((props.show = false));
 							}}>
 							Do it!
 						</button>
