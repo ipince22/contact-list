@@ -5,14 +5,14 @@
 	"main": "index.js",
 	"scripts": {
 		"c9": "webpack-dev-server --config webpack.dev.js --host $IP --port $PORT",
-		"start": "webpack-dev-server --config webpack.dev.js --hot",
+		"start": "node server.js",
 		"gitpod": "webpack-dev-server --config webpack.dev.js --host 0.0.0.0 --port 3000",
 		"build": "webpack --config webpack.prod.js",
 		"deploy": "node deploy-to-github.js"
 	},
 	"author": {
-		"name": "Alejandro Sanchez",
-		"url": "http://alesanchezr.com/"
+		"name": "Daniel Ipince",
+		"url": "https://github.com/ipince22/"
 	},
 	"contributors": [
 		{
@@ -70,10 +70,13 @@
 	},
 	"dependencies": {
 		"bootstrap": "^4.3.1",
+		"express": "^4.17.1",
+		"express-favicon": "^2.0.1",
+		"path": "^0.12.7",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
-		"react-polyfills": "0.0.1",
 		"react-dom": "^16.8.4",
+		"react-polyfills": "0.0.1",
 		"react-router": "^4.3.1",
 		"react-router-dom": "^4.3.1"
 	}
