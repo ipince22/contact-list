@@ -11,18 +11,15 @@ export const AddContact = () => {
 	const [objContact, setObjContact] = useState();
 	const { actions } = useContext(Context);
 
-	useEffect(
-		() => {
-			setObjContact({
-				agenda_slug: "ipince",
-				full_name: iname,
-				email: iemail,
-				phone: iphone,
-				address: iaddress
-			});
-		},
-		[iname, iemail, iphone, iaddress]
-	);
+	useEffect(() => {
+		setObjContact({
+			agenda_slug: "ipince",
+			full_name: iname,
+			email: iemail,
+			phone: iphone,
+			address: iaddress
+		});
+	}, [iname, iemail, iphone, iaddress]);
 
 	return (
 		<div className="container">

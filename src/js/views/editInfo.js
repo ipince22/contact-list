@@ -13,19 +13,16 @@ export const EditInfo = props => {
 
 	const [objContact, setObjContact] = useState();
 
-	useEffect(
-		() => {
-			console.log("page editinfo.js", store.contacts);
-			setObjContact({
-				agenda_slug: "ipince",
-				full_name: iname,
-				email: iemail,
-				phone: iphone,
-				address: iaddress
-			});
-		},
-		[iname, iemail, iphone, iaddress]
-	);
+	useEffect(() => {
+		console.log("page editinfo.js", store.contacts);
+		setObjContact({
+			agenda_slug: "ipince",
+			full_name: iname,
+			email: iemail,
+			phone: iphone,
+			address: iaddress
+		});
+	}, [iname, iemail, iphone, iaddress]);
 
 	return (
 		<>
